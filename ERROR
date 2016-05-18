@@ -1,0 +1,34 @@
+Quality encoding detected as phred33
+Input Read Pairs: 1469872 Both Surviving: 906646 (61.68%) Forward Only Surviving: 560702 (38.15%) Reverse Only Surviving: 1735 (0.12%) Dropped: 789 (0.05%)
+TrimmomaticPE: Completed successfully
+</pre>
+Process 62109 returned: (0). Peak memory: (Process: 0.147GB; Pipeline: 0.0GB)
+Follow:
+Traceback (most recent call last):
+  File "ATACseq.py", line 105, in <module>
+    mypiper.run(cmd, trimmed_fastq, follow = check_trim)
+  File "/home/jinxu/.local/lib/python2.7/site-packages/pypiper/pypiper.py", line 416, in run
+    follow_result = follow()
+  File "ATACseq.py", line 100, in check_trim
+    rr = float(mypiper.get_stat("Raw_reads"))
+  File "/home/jinxu/.local/lib/python2.7/site-packages/pypiper/pypiper.py", line 759, in get_stat
+    self._refresh_stats()
+  File "/home/jinxu/.local/lib/python2.7/site-packages/pypiper/pypiper.py", line 744, in _refresh_stats
+    with open(self.pipeline_stats_file, "rb") as stat_file:
+IOError: [Errno 2] No such file or directory: 'test_out/liver/ATACseq_stats.tsv'
+
+Pypiper terminating spawned child process 62095
+
+Change status from running to failed
+
+### Pipeline failed at:  (05-17 18:04:43) elapsed:31.24 _TIME_
+
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/usr/lib64/python2.7/atexit.py", line 24, in _run_exitfuncs
+    func(*targs, **kargs)
+  File "/home/jinxu/.local/lib/python2.7/site-packages/pypiper/pypiper.py", line 856, in _exit_handler
+    self.fail_pipeline(Exception("Unknown exit failure"))
+  File "/home/jinxu/.local/lib/python2.7/site-packages/pypiper/pypiper.py", line 812, in fail_pipeline
+    raise e
+Exception: Unknown exit failure
